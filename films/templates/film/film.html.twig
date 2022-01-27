@@ -1,0 +1,18 @@
+{% block stylesheets %}
+    <style type="text/css">
+        .espace { margin: 10% 10% 10% 10%;}
+        h2, .firstp { text-align: center;}
+        p { font-size: 25px; }
+        label, button {margin-top: 30px;}
+
+    </style>
+{% endblock %}
+
+{% block body %}
+<section class="espace">
+    <h2> {{ film.nom}} </h2>
+    <p class="firstp"> {{ film.description}} </p> <br>
+    <p> Avis des viewers: {{ film.note }}/10 </p>
+    <p> Nombre de votants : {{ film.nbvotant }} </p>
+</section>
+{% endblock %}

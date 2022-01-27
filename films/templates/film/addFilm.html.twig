@@ -1,0 +1,30 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+    <style> 
+        .formFilm { margin: 10% 10% 10% 10%;}
+        h2 { text-align: center; margin-top: 10vh;}
+        label, button {margin-top: 30px;}
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h2> ADD FILM </h2>
+    <div class="formFilm">
+        {{ form_start(form) }}
+        
+            {{ form_label(form.name, 'Nom du film*') }}
+            {{ form_widget(form.name, { 'attr': {'required': 'true'}}) }}
+
+                        {{ form_label(form.score, 'Notez ce film*') }}
+            {{ form_widget(form.score, { 'attr': {'required': 'true'}}) }}
+
+            {{ form_label(form.email, 'Email*') }}
+            {{ form_widget(form.email, { 'attr': {'required': 'true'}}) }}
+
+
+            <button type="submit" class="btn btn-success">Enregistrer</button>
+            {% block error %} {% endblock %}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
